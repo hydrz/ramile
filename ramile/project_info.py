@@ -26,9 +26,14 @@ class ProjectInfo(object):
         return
 
     def parse_config(self):
-        """ Try to parse .ramileconfig.json file from the project root.
+        """ Try to parse .ramileconfig.json file from the home root or project root.
         """
-        config_file = os.path.join(self.project_root, '.ramileconfig.json')
+        config_file_name = '.ramileconfig.json'
+        home = os.path.expanduser('~')
+        if os.path.exists(os.path.join(home, config_file_name)):
+            config_file = os.path.join(home, config_file_name)
+        else :
+            config_file = os.path.join(self.project_root, config_file_name)
         if os.path.exists(config_file):
             with io.open(config_file, 'r') as file:
                 config_data = json.load(file)

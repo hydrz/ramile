@@ -11,16 +11,14 @@ Tested under python 3.6.1.
 
 ## Installation
 
-Right now we can only run Ramile from source code. In the future it may be uploaded to pypi.
-
-To run Ramile source code, clone the repository and install dependencies: `pip install -r requirements.txt`. Or if in China, mirros could be used `pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ -r requirements.txt`
+ `python setup.py install`
 
 ## Basic Usage
 
 Running from source code:
 
 ```
-python ramile-cli.py extract <path to your project root>
+ramile extract <path to your project root>
 ```
 
 When the extraction is completed, a file named `extracted_code.docx` will be generated under your project root directory, with 3000 lines of code. You just have to open it and remove unnecessary pages to make the document exact 60 pages.
@@ -28,14 +26,14 @@ When the extraction is completed, a file named `extracted_code.docx` will be gen
 If you want to strictly meet the [regulation](./著作权法.md#第十条-软件的鉴别材料包括程序和文档的鉴别材料), you can extract all the lines by append `Inf` to the command line:
 
 ```
-python ramile-cli.py extract <path to your project root> Inf
+ramile extract <path to your project root> Inf
 ```
 
 And then you just have to open it and keep the first 30 pages and the last 30 pages, and remove all the intermediate pages.
 
 ## Config
 
-Ramile automatically loads the config file `.ramileconfig.json` from the project root, if it exits. The file should be in json format. Possible config items as below:
+Ramile automatically loads the config file `.ramileconfig.json` from the home root or project root, if it exits. The file should be in json format. Possible config items as below:
 
 | Key              | Description                                                                                                                                                                                                                          | Default | Example          |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :--------------- |

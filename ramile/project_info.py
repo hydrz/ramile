@@ -70,4 +70,4 @@ class ProjectInfo(object):
         return self.lines_extracted >= self.lines_to_extract
 
     def get_output_file_path(self, output_filename):
-        return os.path.join(self.project_root, output_filename)
+        return os.path.join(os.getcwd(), output_filename)

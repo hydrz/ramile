@@ -18,7 +18,7 @@ Tested under python 3.6.1.
 Running from source code:
 
 ```
-ramile extract <path to your project root>
+ramile <path to your project root>
 ```
 
 When the extraction is completed, a file named `extracted_code.docx` will be generated under your project root directory, with 3000 lines of code. You just have to open it and remove unnecessary pages to make the document exact 60 pages.
@@ -26,7 +26,7 @@ When the extraction is completed, a file named `extracted_code.docx` will be gen
 If you want to strictly meet the [regulation](./著作权法.md#第十条-软件的鉴别材料包括程序和文档的鉴别材料), you can extract all the lines by append `Inf` to the command line:
 
 ```
-ramile extract <path to your project root> Inf
+ramile <path to your project root> Inf
 ```
 
 And then you just have to open it and keep the first 30 pages and the last 30 pages, and remove all the intermediate pages.

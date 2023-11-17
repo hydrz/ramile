@@ -36,8 +36,6 @@ class Project(object):
             for output in file_processor.process(file):
                 self.export(output)
                 file.extracted_line()
-                if self.info.has_extracted_enough_lines():
-                    break
             # collect file summary
             self.info.lines_skipped_blank += file.blank_lines
             self.info.lines_skipped_comments += file.comment_lines

@@ -1,4 +1,5 @@
 import os
+import random
 
 from ramile.file_info import FileInfo
 from ramile.processors import FileProcessor
@@ -57,4 +58,7 @@ class ProjectProcessor(object):
             return False
 
     def sort_files(self):
+        """ Random sort files
+        """
+        random.shuffle(self.files)
         return
